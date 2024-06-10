@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Resultado do Formulário</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="form.html">Formulário</a></li>
+                <li><a href="about.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Resultado do Formulário</h1>
+        <p>Nome: <span id="result-name"></span></p>
+        <p>Email: <span id="result-email"></span></p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Nosso Site</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            const email = urlParams.get('email');
+            document.getElementById('result-name').textContent = name;
+            document.getElementById('result-email').textContent = email;
+        });
+    </script>
+</body>
+</html>
+
